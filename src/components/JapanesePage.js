@@ -3,43 +3,43 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './JapanesePage.css';
 import greetingsImage from '../components/Greetings.png';
 import diningImage from '../components/Dining.png';
-// import familyImage from '../components/Family.png';
-// import shoppingImage from '../components/Shopping.png';
+import numberImage from '../components/Number.png';
 
 const JapanesePage = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  const imageSections = [
+  const contentSections = [
     {
       image: greetingsImage,
       title: "Greetings and basic conversations",
-      description: "Learn essential Japanese phrases for daily interactions"
+      description: "Learn essential Japanese phrases for daily interactions",
+      buttons: [
+        "Basic Greetings",
+        "Self Introduction",
+        "Common Phrases"
+      ]
     },
     {
       image: diningImage,
       title: "Dining and food vocabulary",
-      description: "Master restaurant conversations and food terms"
+      description: "Master restaurant conversations and food terms",
+      buttons: [
+        "Ordering Food",
+        "Food Vocabulary",
+        "Restaurant Phrases"
+      ]
     },
-    // {
-    //   image: familyImage,
-    //   title: "Family relationships",
-    //   description: "Learn how to talk about family members"
-    // },
-    // {
-    //   image: shoppingImage,
-    //   title: "Shopping phrases",
-    //   description: "Essential vocabulary for stores and markets"
-    // }
-  ];
-
-  const playCircleItems = [
-    "Basic Greetings",
-    "Self Introduction",
-    "Profession and Personalities",
-    "Your hometown",
-    "Your family",
-    "Practice"
+    {
+      image: numberImage,
+      title: "Numbers and counting",
+      description: "Number and counter suffixes",
+      buttons: [
+        "Basic Numbers",
+        "Counters",
+        "Phone Numbers"
+      ]
+    }
   ];
 
   return (
@@ -63,29 +63,29 @@ const JapanesePage = () => {
           </div>
         </section>
 
-        {/* Multiple Image Sections */}
-        {imageSections.map((section, index) => (
-          <section key={index} className="lesson-image-section">
-            <img src={section.image} alt={section.title} className="lesson-image" />
-            <div className="image-text-container">
-              <p className="image-caption">{section.title}</p>
-              <p className="image-description">{section.description}</p>
-            </div>
-          </section>
-        ))}
-
-        {/* Circular Play Buttons */}
-        <section className="play-circles-section">
-          <h3 className="section-title">Start Learning</h3>
-          <div className="play-circles-container">
-            {playCircleItems.map((item, index) => (
-              <div key={index} className="play-circle">
-                <div className="play-icon">▶</div>
-                <p className="circle-label">{item}</p>
+        {/* Content Sections with Image + Buttons */}
+        {contentSections.map((section, index) => (
+          <React.Fragment key={index}>
+            <section className="lesson-image-section">
+              <img src={section.image} alt={section.title} className="lesson-image" />
+              <div className="image-text-container">
+                <p className="image-caption">{section.title}</p>
+                <p className="image-description">{section.description}</p>
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
+
+            <section className="play-circles-section">
+              <div className="play-circles-container">
+                {section.buttons.map((buttonText, btnIndex) => (
+                  <div key={btnIndex} className="play-circle">
+                    <div className="play-icon">▶</div>
+                    <p className="circle-label">{buttonText}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </React.Fragment>
+        ))}
       </main>
     </div>
   );
