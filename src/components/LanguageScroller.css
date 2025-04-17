@@ -1,0 +1,209 @@
+/* LanguageScroller.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.language-page {
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  margin: 20px 16px;
+  color: #000;
+  font-weight: 500;
+  text-align: left;
+}
+
+.language-sections {
+  flex: 1;
+  overflow-y: auto;
+  background-color: white;
+  padding: 0 16px;
+}
+
+.language-section {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 16px 0 8px 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0 -16px;
+}
+
+.language-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 16px 16px 24px; 
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0 -16px; 
+}
+
+/* Hover Effects */
+.language-item:hover {
+  background-color: #f0f7ff;
+}
+
+.language-item:hover .language-name {
+  color: #2a5885;
+  font-weight: 500;
+}
+
+.language-item:hover .language-flag {
+  filter: brightness(1.1);
+}
+
+/* Main Language (English) */
+.language-item.main-language {
+  border-left: 3px solid #4a6fa5;
+  padding-left: 21px; /* 24px - 3px border */
+  background-color: #f0f7ff;
+}
+
+.language-item.main-language .language-name {
+  font-weight: 500;
+}
+
+/* Flag Styling */
+.language-flag {
+  width: 28px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-right: 16px;
+  margin-left: 8px; /* Space between left boundary and flag */
+  transition: filter 0.2s ease;
+}
+
+/* Text Styling */
+.language-name {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.language-status {
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: auto;
+  padding-right: 8px;
+}
+
+/* Sub-language Items */
+.sub-language-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px 12px 60px; /* Adjusted left padding */
+  border-bottom: 1px solid #f5f5f5;
+  transition: all 0.2s ease;
+  margin: 0 -16px;
+}
+
+.sub-language-item:hover {
+  background-color: #f0f7ff;
+}
+
+.sub-language-item:hover .sub-language-name {
+  color: #2a5885;
+  font-weight: 500;
+}
+
+/* Done Button */
+.done-button {
+  padding: 14px 20px;
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 20px auto;
+  width: calc(100% - 32px);
+  max-width: 500px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.done-button:hover {
+  background-color: #3a5a80;
+}
+
+/* Scrollbar */
+.language-sections::-webkit-scrollbar {
+  width: 4px;
+}
+
+.language-sections::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.language-sections::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+.language-sections::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Add to LanguageScroller.css */
+
+.language-item {
+    position: relative;
+    padding-left: 550px; 
+  }
+  
+  .language-selector {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .language-flag {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+  
+  .language-item.selected {
+    background-color: #f0f7ff;
+  }
+
+.language-item.selected {
+    background-color: #f0f7ff;
+    border: 2px solid #4a6fa5;
+  }
+  
+  .language-item.selected .language-name {
+    color: #2a5885;
+    font-weight: 500;
+  }
+  
+  .language-item:hover {
+    background-color: #f5f5f5; 
+  }
