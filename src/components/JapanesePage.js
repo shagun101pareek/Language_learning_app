@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './JapanesePage.css';
 import greetingsImage from '../components/assets/Greetings.png';
@@ -9,10 +9,27 @@ import prefImage from '../components/assets/PrefImage.png';
 import homeImage from '../components/assets/Home.png';
 import dailyImage from '../components/assets/Daily.png';
 import talkingImage from '../components/assets/Talking.png';
+import WelcomePage from './WelcomePage';
 
 const JapanesePage = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
+  const [currentView, setCurrentView] = useState('main');
+
+  const handleLessonClick = (sectionIndex, buttonIndex) => {
+    if (sectionIndex === 0 && buttonIndex === 0) {
+      setCurrentView('welcome');
+    }
+  };
+
+  const handleNext = () => {
+    // We'll handle the next steps after welcome page later
+    setCurrentView('main');
+  };
+
+  if (currentView === 'welcome') {
+    return <WelcomePage onNext={handleNext} />;
+  }
 
   const contentSections = [
     {
@@ -148,7 +165,12 @@ const JapanesePage = () => {
             <section className="play-circles-section">
               <div className="play-circles-container">
                 {section.buttons.map((buttonText, btnIndex) => (
-                  <div key={btnIndex} className="play-circle">
+                  <div 
+                    key={btnIndex} 
+                    className="play-circle"
+                    onClick={() => handleLessonClick(index, btnIndex)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <div className="play-icon">▶</div>
                     <p className="circle-label">{buttonText}</p>
                   </div>
