@@ -1,9 +1,14 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './JapanesePage.css';
-import greetingsImage from '../components/Greetings.png';
-import diningImage from '../components/Dining.png';
-import numberImage from '../components/Number.png';
+import greetingsImage from '../components/assets/Greetings.png';
+import diningImage from '../components/assets/Dining.png';
+import numberImage from '../components/assets/Number.png';
+import cityImage from '../components/assets/City.png';
+import prefImage from '../components/assets/PrefImage.png';
+import homeImage from '../components/assets/Home.png';
+import dailyImage from '../components/assets/Daily.png';
+import talkingImage from '../components/assets/Talking.png';
 
 const JapanesePage = () => {
   const { state } = useLocation();
@@ -13,32 +18,98 @@ const JapanesePage = () => {
     {
       image: greetingsImage,
       title: "Greetings and basic conversations",
-      description: "Learn essential Japanese phrases for daily interactions",
+      description: "5 topics • 35 words",
       buttons: [
         "Basic Greetings",
         "Self Introduction",
-        "Common Phrases"
+        "Common Phrases",
+        "Profession and nationalities",
+        "Your hometown",
       ]
     },
     {
       image: diningImage,
-      title: "Dining and food vocabulary",
-      description: "Master restaurant conversations and food terms",
+      title: "Family, shopping and dining",
+      description: "5 topics • 67 words",
       buttons: [
         "Ordering Food",
         "Food Vocabulary",
-        "Restaurant Phrases"
+        "Restaurant Phrases",
+        "All about family",
+        "Dining out"
       ]
     },
     {
       image: numberImage,
-      title: "Numbers and counting",
-      description: "Number and counter suffixes",
+      title: "Numbers and counter suffixes",
+      description: "5 topics • 43 words",
       buttons: [
         "Basic Numbers",
         "Counters",
-        "Phone Numbers"
+        "Phone Numbers",
+        "More about numbers",
+        "Hundred and beyond"
       ]
+    },
+    {
+        image: cityImage,
+        title: "Getting around the city",
+        description: "5 topics • 49 words",
+        buttons: [
+            "Jump to this chapter",
+            "About places",
+            "Travel time",
+            "Let's go shopping",
+            "About"
+        ]
+    },
+    {
+        image: prefImage,
+        title: "Your preferences",
+        description: "5 topics • 37 words",
+        buttons: [
+            "Jump to this chapter",
+            "Your likes",
+            "Food and beverages",
+            "About sports",
+            "Entertainment"
+        ]
+    },
+    {
+        image: homeImage,
+        title: "Your home and neighbourhood",
+        description: "5 topics • 31 words",
+        buttons: [
+            "Jump to this chapter",
+            "Your house",
+            "Your kitchen",
+            "Your room",
+            "Practice"
+        ]
+    },
+    {
+        image: dailyImage,
+        title: "Daily routine",
+        description: "5 topics • 49 words",
+        buttons: [
+            "Jump to this chapter",
+            "Morning routine",
+            "Off to work",
+            "Day at work",
+            "Returning to home"
+        ]
+    },
+    {
+        image: talkingImage,
+        title: "Talking about plans",
+        description: "5 topics • 55 words",
+        buttons: [
+            "Jumo to this chapter",
+            "Weekend plans",
+            "Inviting friends",
+            "Going on a date",
+            "Event management"
+        ]
     }
   ];
 

@@ -17,7 +17,6 @@ const languages = [
         code: 'en', 
         name: 'English', 
         flag: englishFlag,
-        isMain: true // Added to identify main language
       }
     ]
   },
@@ -58,7 +57,6 @@ const LanguageScroller = () => {
     }
   };
 
-  // Check if language is selected
   const isLanguageSelected = !!selectedLanguage;
 
   return (
@@ -84,16 +82,13 @@ const LanguageScroller = () => {
                     src={language.flag} 
                     alt={language.name} 
                     className="language-flag" 
-                    loading="lazy" // Added for performance
+                    loading="lazy"
                   />
                   <div className="language-info">
                     <span className="language-name">{language.name}</span>
-                    {selectedLanguage === language.code && (
-                      <span className="language-status">SELECTED</span>
-                    )}
-                    {language.isMain && (
-                      <span className="language-status">CURRENT</span>
-                    )}
+                    {selectedLanguage === language.code 
+                      }
+                    {language.isMain }
                   </div>
                 </div>
               ))}
