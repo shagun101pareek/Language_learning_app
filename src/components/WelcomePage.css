@@ -1,20 +1,22 @@
 .welcome-page {
-  min-height: 100vh;
+  min-height: 10vh;
   background-color: #f0f8ff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  padding: 20px;
 }
 
 .greeting-card {
   background: white;
   border-radius: 20px;
-  width: 85%;
-  max-width: 340px;
-  height: 580px;
-  margin: 20px auto;
-  padding: 15px;
+  width: 95%;
+  max-width: 600px;
+  height: auto;
+  min-height: 400px;
+  margin: 8px auto;
+  /* padding: 1rem; */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   border: 2px solid #1a365d;
@@ -23,86 +25,112 @@
 }
 
 .welcome-card {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  padding: 0;
+  overflow: hidden;
+  gap: 1rem;
+  height: 100%;
 }
 
 .welcome-card .mascot-container {
-  height: 180px;
+  width: 100%;
+  height: 290px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: #f0f8ff;
+  padding: 0;
 }
 
 .welcome-card .mascot-image {
-  width: auto;
-  height: 230px;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+}
+
+.welcome-card .content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+  margin-top: auto;
 }
 
 .welcome-card .welcome-text {
-  max-width: 280px;
+  max-width: 460px;
   text-align: center;
+  order: 1;
+  flex: 1;
 }
 
 .welcome-text h1 {
   font-size: 1.3rem;
-  line-height: 1.75;
+  line-height: 1.4;
   color: #000000;
   font-weight: 500;
+  margin: 0;
 }
 
 /* Greeting card specific styles */
 .greeting-header {
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 4px;
+  margin-bottom: 0.6rem;
 }
 
 .greeting-header h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #666;
   font-weight: 500;
 }
 
 .japanese-text {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   color: #4AA9FF;
   text-align: center;
-  margin: 1px 0 5px;
 }
 
 .romaji-text {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #666;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   letter-spacing: 2px;
 }
 
 .greeting-description {
-  margin: 10px 0;
+  margin: 0.4rem auto;
 }
 
 .greeting-description p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.3;
   padding: 0 15px;
   margin: 0;
 }
 
-.greeting-image-container {
+.greeting-image-container,
+.translation-image-container,
+.new-greeting-card .greeting-image-container {
   width: 100%;
-  height: 200px;
-  margin: 10px 0;
+  max-width: 500px;
+  margin: 0.3rem auto;
+  border-radius: 16px;
   overflow: hidden;
-  border-radius: 10px;
+  aspect-ratio: 3/2;
+  height: 220px;
 }
 
 .greeting-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .mascot-decoration {
@@ -116,17 +144,25 @@
 .next-button {
   background: #4AA9FF;
   color: white;
-  border: none;
-  padding: 10px 35px;
-  border-radius: 25px;
+  border: 2px solid #3498db;
+  padding: 0.8rem 2rem;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
-  margin: 10px auto;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-radius: 24px;
+  height: 45px;
+  min-width: 100px;
+  max-width: 120px;
+  display: block;
+  margin: 0.5rem auto;
+  align-self: center;
 }
 
 .next-button:hover {
   background: #3498db;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bottom-nav {
@@ -158,43 +194,643 @@
   background: #e0e0e0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .welcome-card .content-container {
+    padding: 1.5rem;
+  }
+
+  .welcome-card .welcome-text {
+    max-width: 400px;
+  }
+
+  .next-button {
+    margin: 1.2rem auto;
+  }
+
+  .welcome-card .mascot-container {
+    height: 210px;
+  }
+
   .greeting-card {
-    width: 90%;
-    padding: 12px;
-    height: 540px;
+    min-height: 380px;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-card .content-container {
+    padding: 1rem;
   }
 
-  .welcome-card .mascot-image {
-    height: 120px;
+  .welcome-card .welcome-text {
+    max-width: 320px;
   }
 
-  .welcome-text h1 {
-    font-size: 1rem;
+  .welcome-card .mascot-container {
+    height: 150px;
   }
 
-  .greeting-header h2 {
-    font-size: 1.2rem;
+  .greeting-card {
+    min-height: 350px;
   }
 
-  .japanese-text {
-    font-size: 2.4rem;
-  }
-
-  .romaji-text {
-    font-size: 1.15rem;
-  }
-
-  .greeting-description p {
-    font-size: 1.1rem;
-    padding: 0 12px;
-  }
-
-  .greeting-image-container {
-    height: 180px;
+  .next-button {
+    margin: 1rem auto;
   }
 }
 
 .bold-text {
   font-weight: 700;
-} 
+}
+
+/* Identify view styles */
+.identify-card {
+  padding: 1.5rem;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.identify-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.japanese-text.large {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #4AA9FF;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  padding: 0;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 1rem;
+}
+
+.option-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16/9;
+  height: 220px;
+  max-width: 320px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.option-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.option-card.selected {
+  border: 3px solid #4a6fa5;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(74, 111, 165, 0.2);
+}
+
+.option-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.option-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+
+.next-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+.next-button.active {
+  background-color: #4a6fa5;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.next-button.active:hover {
+  background-color: #3a5a80;
+  transform: translateY(-2px);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .identify-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .japanese-text.large {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .options-container {
+    gap: 1rem;
+    padding: 0 0.8rem;
+  }
+
+  .option-card {
+    height: 180px;
+    max-width: 280px;
+  }
+
+  .greeting-image-container,
+  .translation-image-container,
+  .new-greeting-card .greeting-image-container {
+    height: 200px;
+    margin: 0.2rem auto;
+  }
+
+  .matching-item {
+    min-height: 55px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .options-container {
+    max-width: 1100px;
+  }
+}
+
+/* Translation view styles */
+.translate-card {
+  padding: 1.5rem;
+  max-width: 600px;
+  gap: 1.5rem;
+}
+
+.translate-title {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.translate-text {
+  font-size: 1.6rem;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.translation-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.translation-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.4rem 0 0.8rem;
+  font-size: 1.6rem;
+}
+
+.translation-blank {
+  min-width: 160px;
+  height: 50px;
+  border: 2px dashed #4AA9FF;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4AA9FF;
+  background-color: rgba(74, 169, 255, 0.05);
+}
+
+.translation-text {
+  color: #333;
+  font-size: 1.6rem;
+}
+
+.translation-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 0;
+}
+
+.translation-option {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  margin: 0;
+}
+
+.translation-option:hover {
+  background: #f1f3f5;
+  transform: translateY(-2px);
+}
+
+.translation-option.selected {
+  background: #E8F4FF;
+  border-color: #38B6FF;
+}
+
+.option-romaji {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.1rem;
+}
+
+.option-japanese {
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+
+  .translate-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .translation-image-container {
+    max-width: 400px;
+    height: 250px;
+  }
+
+  .translation-prompt {
+    font-size: 1.4rem;
+    gap: 0.8rem;
+  }
+
+  .translation-blank {
+    min-width: 140px;
+    height: 45px;
+  }
+
+  .translation-options {
+    gap: 1rem;
+    padding: 0 0.8rem;
+  }
+
+  .option-japanese {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .translation-image-container {
+    max-width: 320px;
+    height: 220px;
+  }
+
+  .translation-blank {
+    min-width: 120px;
+    height: 40px;
+  }
+}
+
+/* New Greeting styles */
+.new-greeting-card {
+  max-width: 600px;
+}
+
+.new-greeting-title {
+  font-size: 1.4rem;
+  color: #666;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.new-greeting-card .japanese-text {
+  font-size: 2.8rem;
+  color: #4AA9FF;
+  text-align: center;
+}
+
+.new-greeting-card .romaji-text {
+  font-size: 1.3rem;
+  color: #666;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.new-greeting-card .greeting-description {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.new-greeting-card .greeting-description p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.new-greeting-card .greeting-image-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/4;
+  height: 400px;
+}
+
+.new-greeting-card .greeting-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.new-greeting-card .next-button {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .new-greeting-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .new-greeting-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .new-greeting-card .japanese-text {
+    font-size: 2.4rem;
+  }
+
+  .new-greeting-card .romaji-text {
+    font-size: 1.1rem;
+  }
+
+  .new-greeting-card .greeting-description p {
+    font-size: 1.1rem;
+  }
+
+  .new-greeting-card .greeting-image-container {
+    max-width: 400px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-greeting-card .greeting-image-container {
+    max-width: 320px;
+    height: 300px;
+  }
+}
+
+/* Matching page styles */
+.matching-card {
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.matching-title {
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.matching-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  padding: 0 0.8rem;
+}
+
+.matching-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.matching-item {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-size: 1.2rem;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.matching-item:hover {
+  background: #f1f3f5;
+  transform: translateY(-2px);
+}
+
+.matching-item.matched {
+  background: #e7f5ff;
+  border-color: #4AA9FF;
+}
+
+.matching-item.selected {
+  background: #fff3cd;
+  border-color: #ffc107;
+  box-shadow: 0 0 0 2px #ffc107;
+}
+
+.matching-item.japanese {
+  gap: 0.3rem;
+}
+
+/* Completion page styles */
+.complete-card {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.complete-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0.8rem 0;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 1.2rem 0;
+}
+
+.lesson-time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #f0f7ff;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stats-item {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stats-item.accuracy {
+  background: #fff3e0;
+}
+
+.stats-item.xp {
+  background: #e8f5e9;
+}
+
+.stats-item.words {
+  background: #f3e5f5;
+}
+
+.stats-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stats-value {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.feedback-section {
+  margin: 1.5rem 0;
+}
+
+.feedback-section h3 {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.feedback-options {
+  /* display: flex; */
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feedback-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0.5rem;
+}
+
+.feedback-button:hover {
+  transform: scale(1.2);
+}
+
+.next-button.continue {
+  background: #4AA9FF;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .matching-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .matching-item {
+    min-height: 55px;
+    font-size: 1.1rem;
+  }
+
+  .complete-title {
+    font-size: 1.6rem;
+  }
+
+  .stats-grid {
+    gap: 0.8rem;
+  }
+
+  .stats-value {
+    font-size: 1.3rem;
+  }
+
+  .feedback-button {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .greeting-image-container,
+  .translation-image-container,
+  .new-greeting-card .greeting-image-container {
+    max-width: 400px;
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting-image-container,
+  .translation-image-container,
+  .new-greeting-card .greeting-image-container {
+    max-width: 320px;
+    aspect-ratio: 1/1;
+  }
+}
+
+.mascot-small {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}  
