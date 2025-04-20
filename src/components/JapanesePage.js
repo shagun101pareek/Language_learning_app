@@ -10,25 +10,71 @@ import homeImage from '../components/assets/Home.png';
 import dailyImage from '../components/assets/Daily.png';
 import talkingImage from '../components/assets/Talking.png';
 import WelcomePage from './WelcomePage';
+import SelfIntroPage from './SelfIntroPage';
+import CommonPhrasesPage from './CommonPhrasesPage';
+import ProfessionsPage from './ProfessionsPage';
 
 const JapanesePage = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
   const [currentView, setCurrentView] = useState('main');
 
-  const handleLessonClick = (sectionIndex, buttonIndex) => {
-    if (sectionIndex === 0 && buttonIndex === 0) {
-      setCurrentView('welcome');
+  const handleLessonClick = (buttonText) => {
+    // Map button text to corresponding views
+    switch(buttonText) {
+      case "Basic Greetings":
+        setCurrentView('welcome');
+        break;
+      case "Self Introduction":
+        setCurrentView('self-intro');
+        break;
+      case "Common Phrases":
+        setCurrentView('common-phrases');
+        break;
+      case "Profession and nationalities":
+        setCurrentView('professions');
+        break;
+      case "Your hometown":
+        setCurrentView('hometown');
+        break;
+      default:
+        // For other buttons that aren't implemented yet
+        console.log("This lesson is not available yet");
+        return;
     }
+    
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
 
   const handleNext = () => {
-    // We'll handle the next steps after welcome page later
     setCurrentView('main');
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
 
   if (currentView === 'welcome') {
     return <WelcomePage onNext={handleNext} />;
+  }
+
+  if (currentView === 'self-intro') {
+    return <SelfIntroPage onNext={handleNext} />;
+  }
+
+  if (currentView === 'common-phrases') {
+    return <CommonPhrasesPage onNext={handleNext} />;
+  }
+
+  if (currentView === 'professions') {
+    return <ProfessionsPage onNext={handleNext} />;
   }
 
   const contentSections = [
@@ -168,7 +214,7 @@ const JapanesePage = () => {
                   <div 
                     key={btnIndex} 
                     className="play-circle"
-                    onClick={() => handleLessonClick(index, btnIndex)}
+                    onClick={() => handleLessonClick(buttonText)}
                     style={{ cursor: 'pointer' }}
                   >
                     <div className="play-icon">▶</div>

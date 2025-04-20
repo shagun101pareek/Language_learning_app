@@ -1,0 +1,409 @@
+.phrases-page {
+  min-height: 10vh;
+  background-color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.phrase-card {
+  background: white;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 800px;
+  min-height: 400px;
+  margin: 8px auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Learn Page Styles */
+.learn-content,
+.match-content,
+.choice-content,
+.translate-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.phrase-content {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.phrase-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.japanese-phrase {
+  font-size: 2.4rem;
+  color: #4AA9FF;
+  margin-bottom: 0.5rem;
+}
+
+.romaji-text {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.meaning-text {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.explanation-text {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.examples-title {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.examples-grid,
+.match-grid,
+.options-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.example-item,
+.match-item,
+.choice-option {
+  flex: 1;
+  max-width: 300px;
+  background: white;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.example-image-container,
+.match-image-container,
+.choice-option img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.example-image,
+.match-image,
+.choice-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.example-content,
+.match-item-content,
+.option-text {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.japanese-text,
+.match-japanese {
+  font-size: 1.6rem;
+  color: #4AA9FF;
+  margin-bottom: 0.5rem;
+}
+
+.romaji-small,
+.match-romaji {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.meaning-small,
+.match-meaning,
+.option-text {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Match Page Styles */
+.match-title {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Choice Page Styles */
+.choice-title {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Translation Page Styles */
+.translate-title {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+}
+
+.hint-text {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.translation-input {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem 0;
+}
+
+.translate-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.translate-input:focus {
+  outline: none;
+  border-color: #4AA9FF;
+}
+
+.next-button {
+  background: #4AA9FF;
+  color: white;
+  border: 2px solid #3498db;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-radius: 24px;
+  height: 45px;
+  min-width: 120px;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto 0;
+  align-self: center;
+}
+
+.next-button:hover {
+  background: #3498db;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.next-button:disabled {
+  background: #ccc;
+  border-color: #bbb;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Hover effects */
+.example-item:hover,
+.match-item:hover,
+.choice-option:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Selection state */
+.match-item.selected,
+.choice-option.selected {
+  border-color: #4AA9FF;
+  box-shadow: 0 0 0 2px #4AA9FF;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .phrase-card {
+    padding: 1.5rem;
+  }
+
+  .examples-grid,
+  .match-grid,
+  .options-container {
+    gap: 1.5rem;
+  }
+
+  .example-image-container,
+  .match-image-container,
+  .choice-option img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .phrase-card {
+    padding: 1rem;
+    width: 92%;
+  }
+
+  .examples-grid,
+  .match-grid,
+  .options-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .example-item,
+  .match-item,
+  .choice-option {
+    width: 100%;
+    max-width: none;
+  }
+
+  .example-image-container,
+  .match-image-container,
+  .choice-option img {
+    height: 160px;
+  }
+}
+
+.match-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.match-image-container {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.match-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.match-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.match-item {
+  flex: 1;
+  max-width: 250px;
+  background: white;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.match-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.match-item.selected {
+  border-color: #4AA9FF;
+  box-shadow: 0 0 0 2px #4AA9FF;
+}
+
+.match-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.match-japanese {
+  font-size: 1.6rem;
+  color: #4AA9FF;
+  margin-bottom: 0.5rem;
+}
+
+.match-romaji {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.match-meaning {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .match-image-container {
+    height: 300px;
+  }
+
+  .match-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .match-image-container {
+    height: 250px;
+  }
+
+  .match-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .match-item {
+    width: 100%;
+    max-width: none;
+  }
+} 

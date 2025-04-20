@@ -47,6 +47,7 @@ const LanguageScroller = () => {
       .find(lang => lang.code === selectedLanguage);
     
     if (selectedLangObj) {
+      window.scrollTo(0, 0);
       navigate(`/learn/${selectedLanguage}`, {
         state: {
           language: selectedLangObj.name,

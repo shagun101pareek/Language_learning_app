@@ -44,6 +44,12 @@ const WelcomePage = ({ onNext }) => {
     }
     setSelectedOption(null);
     setSelectedTranslation(null);
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
 
   const handleOptionSelect = (option) => {

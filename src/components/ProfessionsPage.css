@@ -1,0 +1,464 @@
+.professions-page {
+  min-height: 10vh;
+  background-color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px;
+}
+
+.profession-card {
+  background: white;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 600px;
+  min-height: 400px;
+  margin: 8px auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 2px solid #1a365d;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.intro-image-container {
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f8ff;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0 auto 1rem auto;
+  aspect-ratio: 3/2;
+}
+
+.intro-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profession-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.profession-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.japanese-phrase {
+  font-size: 2.4rem;
+  color: #4AA9FF;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.romaji-text {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.meaning-text {
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.explanation-text {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.6;
+  margin: 1rem 0;
+  white-space: pre-line;
+}
+
+.examples-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 0.5rem;
+}
+
+.example-image-container {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.example-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.example-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.example-image:hover {
+  transform: scale(1.05);
+}
+
+.example-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.example-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.japanese-text {
+  font-size: 1.6rem;
+  color: #4AA9FF;
+  margin-bottom: 0.3rem;
+}
+
+.romaji-small {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.meaning-small {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Match page styles */
+.match-content {
+  width: 100%;
+}
+
+.match-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.match-item {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.match-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.match-item.selected {
+  border-color: #4AA9FF;
+  background-color: #f0f7ff;
+}
+
+/* Choice page styles */
+.choice-content {
+  width: 100%;
+  text-align: center;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 1rem 0;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.choice-option {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.2rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.choice-option:hover {
+  transform: translateY(-2px);
+  background: #f0f0f0;
+}
+
+.choice-option.correct {
+  border-color: #28a745;
+  background-color: #d4edda;
+}
+
+/* Translation page styles */
+.translate-content {
+  width: 100%;
+  text-align: center;
+}
+
+.hint-text {
+  font-size: 1rem;
+  color: #666;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.translation-input {
+  margin: 1.5rem 0;
+}
+
+.translate-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.translate-input:focus {
+  outline: none;
+  border-color: #4AA9FF;
+}
+
+.next-button {
+  background: #4AA9FF;
+  color: white;
+  border: 2px solid #3498db;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-radius: 24px;
+  height: 45px;
+  min-width: 100px;
+  max-width: 120px;
+  display: block;
+  margin: 1.5rem auto 0;
+  align-self: center;
+}
+
+.next-button:hover {
+  background: #3498db;
+  transform: translateY(-2px);
+}
+
+.translation-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  white-space: pre-line;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.match-instruction {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.match-japanese {
+  font-size: 1.4rem;
+  color: #4AA9FF;
+  margin-bottom: 0.3rem;
+}
+
+.match-romaji {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.match-meaning {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.match-translation {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.option-japanese {
+  font-size: 1.4rem;
+  color: #4AA9FF;
+  margin-bottom: 0.3rem;
+}
+
+.option-romaji {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.option-meaning {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.translation-breakdown {
+  font-size: 1rem;
+  color: #555;
+  margin: 1rem 0;
+  line-height: 1.6;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  white-space: pre-line;
+}
+
+.pronunciation-text {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.pronunciation-small {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+  font-style: italic;
+}
+
+.match-pronunciation {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.option-pronunciation {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .profession-card {
+    min-height: 380px;
+    padding: 1.2rem;
+  }
+
+  .intro-image-container {
+    height: 220px;
+  }
+
+  .profession-title {
+    font-size: 1.6rem;
+  }
+
+  .japanese-phrase {
+    font-size: 2rem;
+  }
+
+  .match-item {
+    min-height: 70px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profession-card {
+    width: 92%;
+    min-height: 350px;
+    padding: 1rem;
+  }
+
+  .intro-image-container {
+    height: 200px;
+  }
+
+  .profession-title {
+    font-size: 1.4rem;
+  }
+
+  .japanese-phrase {
+    font-size: 1.8rem;
+  }
+
+  .match-grid {
+    gap: 0.8rem;
+  }
+
+  .match-item {
+    min-height: 60px;
+    padding: 0.8rem;
+  }
+
+  .examples-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .example-image-container {
+    height: 140px;
+  }
+} 
