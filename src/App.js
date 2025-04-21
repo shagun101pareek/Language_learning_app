@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import LanguageScroller from './components/LanguageScroller';
 import JapanesePage from './components/JapanesePage';
-import headerBackground from '../src/components/assets/airlearn_bg.png'; 
+import headerBackground from '../src/components/assets/airlearn_bg.png';
+import Footer from './Footer'; 
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </nav>
           </div>
         </header>
+
         <main className="App-main">
           <Routes>
             <Route path="/" element={<LanguageScroller />} />
@@ -28,6 +30,9 @@ function App() {
             <Route path="/learn/ja" element={<JapanesePage />} />
           </Routes>
         </main>
+
+        {/* Footer added below */}
+        <Footer />
       </div>
     </Router>
   );
