@@ -25,7 +25,6 @@
   align-items: center;
 }
 
-/* Learn Page Styles */
 .learn-content,
 .match-content,
 .choice-content,
@@ -153,7 +152,6 @@
   color: #333;
 }
 
-/* Match Page Styles */
 .match-title {
   text-align: center;
   margin: 1rem 0;
@@ -161,7 +159,6 @@
   color: #333;
 }
 
-/* Choice Page Styles */
 .choice-title {
   font-size: 1.8rem;
   color: #333;
@@ -176,7 +173,6 @@
   margin: 1rem 0;
 }
 
-/* Translation Page Styles */
 .translate-title {
   font-size: 1.8rem;
   color: #333;
@@ -245,7 +241,6 @@
   transform: none;
 }
 
-/* Hover effects */
 .example-item:hover,
 .match-item:hover,
 .choice-option:hover {
@@ -253,14 +248,12 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Selection state */
 .match-item.selected,
 .choice-option.selected {
   border-color: #4AA9FF;
   box-shadow: 0 0 0 2px #4AA9FF;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .phrase-card {
     padding: 1.5rem;

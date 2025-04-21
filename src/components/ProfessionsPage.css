@@ -163,7 +163,6 @@
   color: #333;
 }
 
-/* Match page styles */
 .match-content {
   width: 100%;
 }
@@ -206,7 +205,6 @@
   background-color: #f0f7ff;
 }
 
-/* Choice page styles */
 .choice-content {
   width: 100%;
   text-align: center;
@@ -250,7 +248,6 @@
   background-color: #d4edda;
 }
 
-/* Translation page styles */
 .translate-content {
   width: 100%;
   text-align: center;

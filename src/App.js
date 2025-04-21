@@ -2,19 +2,24 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import LanguageScroller from './components/LanguageScroller';
-import JapanesePage from './components/JapanesePage'; // You'll create this next
+import JapanesePage from './components/JapanesePage';
+import headerBackground from '../src/components/assets/airlearn_bg.png'; 
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <h1>Language Learning App</h1>
-          <nav className="App-nav">
-            <a className="App-link" href="/">Home</a>
-            <a className="App-link" href="/about">About</a>
-            <a className="App-link" href="/contact">Contact</a>
-          </nav>
+        <header className="App-header" style={{
+          backgroundImage: `linear-gradient(#6ea1ee,#4A89DC), url(${headerBackground})`
+        }}>
+          <div className="header-content">
+            <h1>Language Learning App</h1>
+            <nav className="App-nav">
+              <a className="App-link" href="/">Home</a>
+              <a className="App-link" href="/about">About</a>
+              <a className="App-link" href="/contact">Contact</a>
+            </nav>
+          </div>
         </header>
         <main className="App-main">
           <Routes>

@@ -1,4 +1,3 @@
-/* LanguageScroller.css - Final Version */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 .language-page {
@@ -67,10 +66,12 @@
   overflow: hidden;
 }
 
-/* Improved flag and text alignment */
+.language-item span { 
+  margin-left: -15px; 
+}
+
 .language-info {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -126,7 +127,6 @@
   margin: 0;
 }
 
-/* Hover and selection effects */
 .language-item::after {
   content: '';
   position: absolute;
@@ -182,7 +182,6 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Scrollbar styling */
 .language-content::-webkit-scrollbar {
   width: 6px;
 }

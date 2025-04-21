@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './JapanesePage.css';
 import greetingsImage from '../components/assets/Greetings.png';
 import diningImage from '../components/assets/Dining.png';
@@ -16,11 +16,10 @@ import ProfessionsPage from './ProfessionsPage';
 
 const JapanesePage = () => {
   const { state } = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [currentView, setCurrentView] = useState('main');
 
   const handleLessonClick = (buttonText) => {
-    // Map button text to corresponding views
     switch(buttonText) {
       case "Basic Greetings":
         setCurrentView('welcome');
@@ -38,12 +37,10 @@ const JapanesePage = () => {
         setCurrentView('hometown');
         break;
       default:
-        // For other buttons that aren't implemented yet
         console.log("This lesson is not available yet");
         return;
     }
     
-    // Scroll to top of the page
     window.scrollTo({
       top: 0,
       left: 0,
@@ -53,7 +50,6 @@ const JapanesePage = () => {
 
   const handleNext = () => {
     setCurrentView('main');
-    // Scroll to top of the page
     window.scrollTo({
       top: 0,
       left: 0,
@@ -179,9 +175,6 @@ const JapanesePage = () => {
   return (
     <div className="japanese-page">
       <header className="page-header">
-        <button className="back-button" onClick={() => navigate('/')}>
-          &larr; Back
-        </button>
         <div className="language-header">
           <img src={state?.flag} alt={state?.language} className="language-flag-large" />
           <h1>Japanese Learning</h1>
@@ -189,7 +182,6 @@ const JapanesePage = () => {
       </header>
 
       <main className="content">
-        {/* Streak Section */}
         <section className="streak-section">
           <div className="streak-header">
             <h2 className="streak-title">Continue your streak!</h2>
@@ -197,7 +189,6 @@ const JapanesePage = () => {
           </div>
         </section>
 
-        {/* Content Sections with Image + Buttons */}
         {contentSections.map((section, index) => (
           <React.Fragment key={index}>
             <section className="lesson-image-section">

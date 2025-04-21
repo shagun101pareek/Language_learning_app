@@ -74,10 +74,9 @@
   line-height: 1.4;
   color: #000000;
   font-weight: 500;
-  margin: 0;
+  margin: 8px;
 }
 
-/* Greeting card specific styles */
 .greeting-header {
   margin-top: 4px;
   margin-bottom: 0.6rem;
@@ -243,7 +242,6 @@
   font-weight: 700;
 }
 
-/* Identify view styles */
 .identify-card {
   padding: 1.2rem;
   gap: 0.8rem;
@@ -377,7 +375,6 @@
   }
 }
 
-/* Translation view styles */
 .translate-card {
   padding: 1.5rem;
   max-width: 600px;
@@ -520,7 +517,6 @@
   }
 }
 
-/* New Greeting styles */
 .new-greeting-card {
   max-width: 600px;
 }
@@ -613,7 +609,6 @@
   }
 }
 
-/* Matching page styles */
 .matching-card {
   padding: 1.5rem;
   gap: 1.5rem;

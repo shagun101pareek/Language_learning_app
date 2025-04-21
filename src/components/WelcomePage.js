@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './WelcomePage.css';
-import mascotImage from './assets/mascot.png'; // You'll need to provide this image
+import mascotImage from './assets/mascot.png'; 
 import morningImage from './assets/morningImage.png';
-import dayImage from './assets/dayScene.png'; // You'll need to add these images
+import dayImage from './assets/dayScene.png'; 
 import nightImage from './assets/nightScene.png';
 import goodMorningImage from './assets/goodMorningImage.png';
 import shizukaImage from './assets/shizuka.png';
@@ -44,7 +44,6 @@ const WelcomePage = ({ onNext }) => {
     }
     setSelectedOption(null);
     setSelectedTranslation(null);
-    // Scroll to top of the page
     window.scrollTo({
       top: 0,
       left: 0,
@@ -78,8 +77,6 @@ const WelcomePage = ({ onNext }) => {
           const newMatchedPairs = [...matchedPairs, newPair];
           setMatchedPairs(newMatchedPairs);
           setMatchingSequence([...matchingSequence, newPair]);
-          
-          // Check if the sequence is correct (morning first, then hello)
           const isCorrect = 
             newMatchedPairs.length === 2 && 
             newMatchedPairs[0] === 'morning' && 
@@ -258,10 +255,12 @@ const WelcomePage = ({ onNext }) => {
               className="greeting-image"
             />
           </div>
+          
 
           <button className="next-button" onClick={handleNext}>
             Next
           </button>
+          
         </div>
       </div>
     );

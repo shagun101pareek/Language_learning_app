@@ -12,7 +12,6 @@ import americanImage from './assets/professions/american.jpg';
 import japaneseImage from './assets/professions/japanese.jpg';
 import chineseImage from './assets/professions/chinese.jpg';
 
-// Create image mapping
 const professionImages = {
   teacher: teacherImage,
   doctor: doctorImage,
@@ -190,7 +189,6 @@ const ProfessionsPage = ({ onNext }) => {
       setSelectedItems([]);
       setShowResult(false);
       setIsCorrect(false);
-      // Scroll to top of the page
       window.scrollTo({
         top: 0,
         left: 0,

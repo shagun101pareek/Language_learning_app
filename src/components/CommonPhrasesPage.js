@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './CommonPhrasesPage.css';
 
-// Image imports
 import thankyouImage from './assets/CommonPhrases/thankyou.png';
 import thankyouCasualImage from './assets/CommonPhrases/thankyou_casual.jpg';
 import thankyouFormalImage from './assets/CommonPhrases/thankyou_formal.png';
@@ -220,7 +219,6 @@ const CommonPhrasesPage = ({ onNext }) => {
       setSelectedItems(newSelected);
       
       if (newSelected.length === 2) {
-        // Check if match is correct
         const isMatch = newSelected[0].meaning === newSelected[1].japanese || 
                        newSelected[0].japanese === newSelected[1].meaning;
         setIsCorrect(isMatch);
@@ -240,7 +238,6 @@ const CommonPhrasesPage = ({ onNext }) => {
       setSelectedItems([]);
       setShowResult(false);
       setIsCorrect(false);
-      // Scroll to top of the page
       window.scrollTo({
         top: 0,
         left: 0,

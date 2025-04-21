@@ -65,9 +65,9 @@
   transition: opacity 0.2s;
 }
 
-.App-link:hover {
+/* .App-link:hover {
   opacity: 0.8;
-}
+} */
 
 /* Main Content Styles */
 .App-main {
@@ -156,6 +156,118 @@
   cursor: pointer;
   transition: all 0.3s ease; /* Smooth transition for all properties */
   color: #333; /* Initial text color */
+}
+
+.App-header {
+  padding: 0;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 200px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.App-header h1 {
+  margin: 10px 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.App-nav {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+  border-radius: 4px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.App-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+  position: relative;
+}
+
+.App-link:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.App-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.App-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .App-header {
+    min-height: 180px;
+  }
+  
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .App-nav {
+    padding: 12px 0;
+    max-width: 90%;
+  }
+  
+  .App-link {
+    margin: 0 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    min-height: 160px;
+  }
+  
+  .App-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .App-nav {
+    padding: 10px 0;
+  }
+  
+  .App-link {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
 }
 
 .language-item:hover {

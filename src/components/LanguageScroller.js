@@ -24,10 +24,10 @@ const languages = [
     category: "FOR ENGLISH SPEAKERS",
     items: [
       { code: 'hi', name: 'Hindi', flag: hindiFlag },
+      { code: 'ja', name: 'Japanese', flag: japaneseFlag },
       { code: 'es', name: 'Spanish', flag: spanishFlag },
       { code: 'fr', name: 'French', flag: frenchFlag },
       { code: 'de', name: 'German', flag: germanFlag },
-      { code: 'ja', name: 'Japanese', flag: japaneseFlag },
       { code: 'ko', name: 'Korean', flag: koreanFlag }
     ]
   }
