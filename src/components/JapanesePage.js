@@ -13,6 +13,7 @@ import WelcomePage from './BasicGreeting';
 import SelfIntroPage from './SelfIntroPage';
 import CommonPhrasesPage from './CommonPhrasesPage';
 import ProfessionsPage from './ProfessionsPage';
+import Header_image from './assets/Header_image.png';
 
 const JapanesePage = () => {
   const { state } = useLocation();
@@ -173,7 +174,14 @@ const JapanesePage = () => {
   ];
 
   return (
-    <div className="japanese-page">
+    <div className="japanese-page"
+    style={{ 
+      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(${Header_image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+      backgroundRepeat: 'no-repeat'
+    }}>
       <header className="page-header">
         <div className="language-header">
           <img src={state?.flag} alt={state?.language} className="language-flag-large" />

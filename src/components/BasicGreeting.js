@@ -126,7 +126,7 @@ const WelcomePage = ({ onNext }) => {
       <div 
   className="welcome-page" 
   style={{ 
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
+    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(${Header_image})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',

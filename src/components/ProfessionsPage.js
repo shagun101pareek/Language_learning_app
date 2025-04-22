@@ -11,6 +11,7 @@ import nurseImage from './assets/professions/nurse.jpg';
 import americanImage from './assets/professions/american.jpg';
 import japaneseImage from './assets/professions/japanese.jpg';
 import chineseImage from './assets/professions/chinese.jpg';
+import Header_image from './assets/Header_image.png'
 
 const professionImages = {
   teacher: teacherImage,
@@ -307,7 +308,15 @@ const ProfessionsPage = ({ onNext }) => {
   );
 
   return (
-    <div className="professions-page">
+    <div 
+    className="professions-page"
+    style={{ 
+      backgroundImage: `linear-gradient(
+        rgba(255, 255, 255, 0.7), 
+        rgba(255, 255, 255, 0.7)
+      ), url(${Header_image}` 
+    }}
+  >
       <div className="profession-card">
         {lesson.type === 'learn' && renderLearnPage()}
         {lesson.type === 'match' && renderMatchPage()}

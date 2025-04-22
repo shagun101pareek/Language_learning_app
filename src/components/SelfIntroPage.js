@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './SelfIntroPage.css';
+import Header_image from './assets/Header_image.png';
 
 const INTRO_LESSONS = [
   {
@@ -81,7 +82,14 @@ const SelfIntroPage = ({ onNext }) => {
   };
 
   return (
-    <div className="self-intro-page">
+    <div className="self-intro-page" 
+    style={{ 
+      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(${Header_image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+      backgroundRepeat: 'no-repeat'
+    }}>
       <div className="intro-card">
         <div className="intro-content">
           <div className="intro-text-container">
