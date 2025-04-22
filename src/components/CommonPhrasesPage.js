@@ -80,7 +80,8 @@ const PHRASES_LESSONS = [
     pairs: [
       { japanese: "すみません", romaji: "Sumimasen", meaning: "Excuse me/I'm sorry" },
       { japanese: "はい", romaji: "Hai", meaning: "Yes" },
-      { japanese: "いいえ", romaji: "Iie", meaning: "No" }
+      { japanese: "いいえ", romaji: "Iie", meaning: "No" },
+      { japanese: "いいえ", romaji: "Tabun", meaning: "Maybe" }
     ]
   },
   {
@@ -109,16 +110,32 @@ const PHRASES_LESSONS = [
   },
   {
     id: 5,
-    type: 'choice',
-    title: "Choose the Right Response",
-    question: "Someone helps you with directions. What do you say?",
-    japanese: "すみません、ありがとうございます",
-    image: directionsImage,
-    options: [
-      { id: 'correct', text: "Excuse me, thank you", isCorrect: true },
-      { id: 'wrong1', text: "Good morning", isCorrect: false },
-      { id: 'wrong2', text: "Goodbye", isCorrect: false }
-    ]
+  type: 'choice',
+  title: "Choose the Right Response",
+  question: "Someone helps you with directions. What do you say?",
+  japanese: "すみません、ありがとうございます",
+  romaji: "Sumimasen, arigatou gozaimasu", // Full romaji for the prompt
+  image: directionsImage,
+  options: [
+    { 
+      id: 'correct', 
+      text: "Excuse me, thank you",
+      romaji: "Sumimasen, arigatou gozaimasu", // Matches prompt
+      isCorrect: true 
+    },
+    { 
+      id: 'wrong1', 
+      text: "Good morning",
+      romaji: "Ohayou gozaimasu", // Romaji for "good morning"
+      isCorrect: false 
+    },
+    { 
+      id: 'wrong2', 
+      text: "Goodbye",
+      romaji: "Sayounara", // Romaji for "goodbye"
+      isCorrect: false 
+    }
+  ]
   },
   {
     id: 6,
@@ -250,8 +267,19 @@ const CommonPhrasesPage = ({ onNext }) => {
   };
 
   const renderLearnPage = () => (
-    <div className="learn-content" >
+    <div className="learn-content">
+    {/* Add this flex container */}
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '20px',
+      marginBottom: '20px',
+      borderBottom: '1px solid #eee', // Optional separator
+      paddingBottom: '10px'
+    }}>
+    </div>
       <h2 className="phrase-title">{lesson.title}</h2>
+      <p className="question-text">{lesson.question}</p>
       <div className="japanese-phrase">{lesson.japanese}</div>
       <div className="romaji-text">{lesson.romaji}</div>
       <div className="meaning-text">{lesson.meaning}</div>
@@ -362,7 +390,17 @@ const CommonPhrasesPage = ({ onNext }) => {
   );
 
   return (
-    <div className="phrases-page">
+    <div className="phrases-page" 
+    style={{ 
+      backgroundImage: `linear-gradient(
+        rgba(255, 255, 255, 0.5), 
+        rgba(255, 255, 255, 0.5)
+      ), url(${Header_image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+      backgroundRepeat: 'no-repeat'
+    }}>
       <div className="phrase-card">
         {lesson.type === 'learn' && renderLearnPage()}
         {lesson.type === 'match' && renderMatchPage()}
