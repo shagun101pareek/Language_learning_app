@@ -21,6 +21,7 @@ import gochisousamaImage from './assets/CommonPhrases/gochisousama.jpg';
 import oishiiImage from './assets/CommonPhrases/oishii.jpg';
 import whenToEatImage from './assets/CommonPhrases/when_to_eat.jpg';
 import goodMorningImage from './assets/CommonPhrases/good_morning.jpg';
+import Header_image from './assets/Header_image.png';
 
 const PHRASES_LESSONS = [
   {
@@ -249,7 +250,7 @@ const CommonPhrasesPage = ({ onNext }) => {
   };
 
   const renderLearnPage = () => (
-    <div className="learn-content">
+    <div className="learn-content" >
       <h2 className="phrase-title">{lesson.title}</h2>
       <div className="japanese-phrase">{lesson.japanese}</div>
       <div className="romaji-text">{lesson.romaji}</div>

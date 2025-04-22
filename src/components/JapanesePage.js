@@ -9,7 +9,7 @@ import prefImage from '../components/assets/PrefImage.png';
 import homeImage from '../components/assets/Home.png';
 import dailyImage from '../components/assets/Daily.png';
 import talkingImage from '../components/assets/Talking.png';
-import WelcomePage from './WelcomePage';
+import WelcomePage from './BasicGreeting';
 import SelfIntroPage from './SelfIntroPage';
 import CommonPhrasesPage from './CommonPhrasesPage';
 import ProfessionsPage from './ProfessionsPage';

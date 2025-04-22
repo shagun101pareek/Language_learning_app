@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import LanguageScroller from './components/LanguageScroller';
 import JapanesePage from './components/JapanesePage';
-import headerBackground from '../src/components/assets/airlearn_bg.png';
+import headerBackground from '../src/components/assets/Header_image.png';
 import Footer from './Footer'; 
 
 function App() {
