@@ -92,16 +92,15 @@ const WelcomePage = ({ onNext }) => {
   if (currentView === 'welcome') {
     return (
       <div 
-         className="welcome-page" 
-           style={{ 
-           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
-           backgroundSize: 'cover',
-           backgroundPosition: 'center',
-           backgroundAttachment: 'fixed',
-           backgroundRepeat: 'no-repeat'
-  }}
->
-        
+        className="welcome-page" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="greeting-card welcome-card">
           <div className="mascot-container">
             <img src={mascotImage} alt="Mascot" className="mascot-image" />
@@ -117,22 +116,22 @@ const WelcomePage = ({ onNext }) => {
           <button className="nav-button">✕</button>
           <button className="nav-button">⚑</button>
         </div>
-        </div>
+      </div>
     );
   }
 
   if (currentView === 'greeting') {
     return (
       <div 
-  className="welcome-page" 
-  style={{ 
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(${Header_image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat'
-  }}
->
+        className="welcome-page" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(${Header_image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="greeting-card">
           <div className="greeting-header">
             <div className="hanging-dot"></div>
@@ -169,15 +168,15 @@ const WelcomePage = ({ onNext }) => {
   if (currentView === 'identify') {
     return (
       <div 
-  className="welcome-page" 
-  style={{ 
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat'
-  }}
->
+        className="welcome-page" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="greeting-card identify-card">
           <h2 className="identify-title">Identify from options</h2>
           <div className="japanese-text large">おはよう (ohayō)</div>
@@ -218,15 +217,15 @@ const WelcomePage = ({ onNext }) => {
   if (currentView === 'translateMorning') {
     return (
       <div 
-  className="welcome-page" 
-  style={{ 
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat'
-  }}
->
+        className="welcome-page" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="greeting-card translate-card">
           <h2 className="translate-title">Translate this sentence</h2>
           <div className="translate-text">Good morning, Ken.</div>
@@ -276,15 +275,15 @@ const WelcomePage = ({ onNext }) => {
   if (currentView === 'newGreeting') {
     return (
       <div 
-  className="welcome-page" 
-  style={{ 
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat'
-  }}
->
+        className="welcome-page" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="greeting-card new-greeting-card">
           <h2 className="new-greeting-title">NEW GREETING</h2>
 
@@ -303,11 +302,9 @@ const WelcomePage = ({ onNext }) => {
             />
           </div>
           
-
           <button className="next-button" onClick={handleNext}>
             Next
           </button>
-          
         </div>
       </div>
     );
@@ -316,15 +313,15 @@ const WelcomePage = ({ onNext }) => {
   if (currentView === 'translate') {
     return (
       <div 
-  className="welcome-page" 
-  style={{ 
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat'
-  }}
->
+        className="welcome-page" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="greeting-card translate-card">
           <h2 className="translate-title">Translate to Japanese</h2>
           <div className="translate-text">Hello, Shizuka.</div>
@@ -369,15 +366,15 @@ const WelcomePage = ({ onNext }) => {
   if (currentView === 'matching') {
     return (
       <div 
-  className="welcome-page" 
-  style={{ 
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat'
-  }}
->
+        className="welcome-page" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="greeting-card matching-card">
           <h2 className="matching-title">Match the following</h2>
 
@@ -435,7 +432,7 @@ const WelcomePage = ({ onNext }) => {
     return (
       <div 
         className="welcome-page" 
-          style={{ 
+        style={{ 
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${Header_image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
