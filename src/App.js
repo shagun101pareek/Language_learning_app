@@ -20,6 +20,11 @@ function App() {
               <a className="App-link" href="/about">About</a>
               <a className="App-link" href="/contact">Contact</a>
             </nav>
+            
+            {/* Static text added below navigation */}
+            <div className="japanese-promo">
+              Go to Japanese → Greetings and Basic Conversation
+            </div>
           </div>
         </header>
 
@@ -31,7 +36,6 @@ function App() {
           </Routes>
         </main>
 
-        {/* Footer added below */}
         <Footer />
       </div>
     </Router>
